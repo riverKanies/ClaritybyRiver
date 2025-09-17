@@ -10,11 +10,11 @@ document.addEventListener('DOMContentLoaded', function() {
             // Toggle the content visibility
             if (content.style.display === 'block') {
                 content.style.display = 'none';
-                arrow.textContent = '▼';
+                arrow.textContent = '▶';
                 this.classList.remove('active');
             } else {
                 content.style.display = 'block';
-                arrow.textContent = '▲';
+                arrow.textContent = '▼';
                 this.classList.add('active');
             }
         });
