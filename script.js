@@ -20,3 +20,17 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+// Read more/less functionality for story sections on mobile
+function toggleReadMore(button) {
+    const section = button.closest('.story-section, .bio-section, .credentials-section');
+    const isExpanded = section.classList.contains('expanded');
+    
+    if (isExpanded) {
+        section.classList.remove('expanded');
+        button.textContent = 'Read More';
+    } else {
+        section.classList.add('expanded');
+        button.textContent = 'Read Less';
+    }
+}

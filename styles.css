@@ -301,4 +301,81 @@ footer p {
     .credentials-section p {
         font-size: 1rem;
     }
+    
+    /* Mobile story section styling with max height and fade effect */
+    .story-section,
+    .bio-section,
+    .credentials-section {
+        position: relative;
+        max-height: 295px;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    
+    .story-section.expanded,
+    .bio-section.expanded,
+    .credentials-section.expanded {
+        max-height: none;
+    }
+    
+    .story-section::after,
+    .bio-section::after,
+    .credentials-section::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 80px;
+        background: linear-gradient(transparent, #333333);
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+    }
+    
+    .story-section.expanded::after,
+    .bio-section.expanded::after,
+    .credentials-section.expanded::after {
+        opacity: 0;
+    }
+}
+
+/* Read more button - hidden on desktop, shown on mobile */
+.read-more-btn {
+    display: none; /* Hidden on all devices by default */
+}
+
+.read-more-btn.hidden {
+    display: none;
+}
+
+/* Show read more button only on mobile and only when section is not expanded */
+@media (max-width: 480px) {
+    .read-more-btn {
+        display: none; /* Still hidden by default on mobile */
+        position: absolute;
+        bottom: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0.3rem 0.8rem;
+        background-color: rgba(51, 51, 51, 0.9);
+        color: #cccccc;
+        border: 1px solid #666666;
+        border-radius: 3px;
+        cursor: pointer;
+        font-weight: normal;
+        font-size: 0.8rem;
+        transition: all 0.3s ease;
+        z-index: 10;
+    }
+    
+    .read-more-btn:hover {
+        background-color: rgba(68, 68, 68, 0.9);
+        color: #ffffff;
+    }
+    
+    .story-section:not(.expanded) .read-more-btn,
+    .bio-section:not(.expanded) .read-more-btn,
+    .credentials-section:not(.expanded) .read-more-btn {
+        display: block;
+    }
 }
