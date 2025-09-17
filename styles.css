@@ -1,0 +1,318 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #ffffff;
+    background-color: #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #000000;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-menu a {
+    color: #cccccc;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #ffffff;
+    background-color: #333333;
+}
+
+/* Main content */
+main {
+    flex: 1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Hero section */
+.hero {
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.hero h3 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #cccccc;
+}
+
+.intro {
+    font-size: 1.2rem;
+    color: #cccccc;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Pain points section */
+.pain-points {
+    padding: 4rem 0;
+    background-color: #2a2a2a;
+}
+
+.pain-point {
+    margin-bottom: 1.5rem;
+    border: 1px solid #444444;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #333333;
+    transition: all 0.3s ease;
+}
+
+.pain-point:hover {
+    border-color: #666666;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.pain-point-toggle {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1.5rem 2rem;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.pain-point-toggle:hover {
+    background-color: #444444;
+}
+
+.pain-point-toggle.active {
+    background-color: #555555;
+}
+
+.pain-point-text {
+    flex: 1;
+    margin-right: 1rem;
+}
+
+.arrow {
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+    color: #cccccc;
+}
+
+.pain-point-content {
+    display: none;
+    padding: 0 2rem 1.5rem 2rem;
+    background-color: #2a2a2a;
+    border-top: 1px solid #444444;
+}
+
+.pain-point-content p {
+    color: #cccccc;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* About page styles */
+.about-hero {
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.about-hero h2 {
+    font-size: 3rem;
+    color: #ffffff;
+}
+
+.about-content {
+    padding: 4rem 0;
+    background-color: #2a2a2a;
+}
+
+.story-section,
+.bio-section,
+.credentials-section,
+.videos-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background-color: #333333;
+    border-radius: 8px;
+    border: 1px solid #444444;
+}
+
+.story-section h3,
+.bio-section h3,
+.credentials-section h3,
+.videos-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+}
+
+.story-section p,
+.bio-section p,
+.credentials-section p {
+    color: #cccccc;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.videos-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.videos-section li {
+    color: #cccccc;
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #444444;
+}
+
+.videos-section li:last-child {
+    border-bottom: none;
+}
+
+/* Footer */
+footer {
+    background-color: #000000;
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid #333333;
+}
+
+footer p {
+    color: #cccccc;
+    font-size: 0.9rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .nav-menu {
+        gap: 1rem;
+    }
+    
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+    
+    .hero h3 {
+        font-size: 1.5rem;
+    }
+    
+    .intro {
+        font-size: 1rem;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .pain-point-toggle {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    
+    .pain-point-content {
+        padding: 0 1rem 1rem 1rem;
+    }
+    
+    .story-section,
+    .bio-section,
+    .credentials-section,
+    .videos-section {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .about-hero h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .hero h3 {
+        font-size: 1.3rem;
+    }
+    
+    .pain-point-toggle {
+        font-size: 0.95rem;
+    }
+    
+    .story-section h3,
+    .bio-section h3,
+    .credentials-section h3,
+    .videos-section h3 {
+        font-size: 1.5rem;
+    }
+    
+    .story-section p,
+    .bio-section p,
+    .credentials-section p {
+        font-size: 1rem;
+    }
+}
