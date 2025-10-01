@@ -33,4 +33,40 @@ function toggleReadMore(button) {
         section.classList.add('expanded');
         button.textContent = 'Read Less';
     }
+    
+    // For story section, also toggle the story-content element
+    if (section.classList.contains('story-section')) {
+        const storyContent = section.querySelector('.story-content');
+        if (storyContent) {
+            if (isExpanded) {
+                storyContent.classList.remove('expanded');
+            } else {
+                storyContent.classList.add('expanded');
+            }
+        }
+    }
+    
+    // For bio section, also toggle the bio-content element
+    if (section.classList.contains('bio-section')) {
+        const bioContent = section.querySelector('.bio-content');
+        if (bioContent) {
+            if (isExpanded) {
+                bioContent.classList.remove('expanded');
+            } else {
+                bioContent.classList.add('expanded');
+            }
+        }
+    }
+    
+    // For credentials section, also toggle the credentials-content element
+    if (section.classList.contains('credentials-section')) {
+        const credentialsContent = section.querySelector('.credentials-content');
+        if (credentialsContent) {
+            if (isExpanded) {
+                credentialsContent.classList.remove('expanded');
+            } else {
+                credentialsContent.classList.add('expanded');
+            }
+        }
+    }
 }

@@ -1,0 +1,124 @@
+/* Flex Grid System - Don't Overthink It */
+
+/* Basic flex grid */
+.flex-grid {
+  display: flex;
+}
+
+.col {
+  flex: 1;
+}
+
+/* Responsive breakpoint for small screens */
+@media (max-width: 400px) {
+  .flex-grid {
+    display: block;
+  }
+}
+
+/* Grid with gutters using space-between */
+.flex-grid-thirds {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-grid-thirds .col {
+  width: 32%;
+}
+
+/* Alternative gutter approach with margins */
+.flex-grid-gutters {
+  display: flex;
+  gap: 1rem; /* Modern approach with gap */
+}
+
+.flex-grid-gutters .col {
+  flex: 1;
+}
+
+/* Legacy margin approach for older browsers */
+.flex-grid-margins {
+  display: flex;
+}
+
+.flex-grid-margins .col {
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.flex-grid-margins .col:last-child {
+  margin-right: 0;
+}
+
+/* Column ordering utilities */
+.col-order-1 { order: 1; }
+.col-order-2 { order: 2; }
+.col-order-3 { order: 3; }
+.col-order-4 { order: 4; }
+.col-order-5 { order: 5; }
+.col-order-6 { order: 6; }
+
+/* Reverse order utilities - for desktop image-left layouts */
+.flex-grid-reverse .col-order-1 { order: 2; }
+.flex-grid-reverse .col-order-2 { order: 1; }
+
+/* Responsive ordering */
+@media (max-width: 768px) {
+  .col-order-mobile-1 { order: 1; }
+  .col-order-mobile-2 { order: 2; }
+  .col-order-mobile-3 { order: 3; }
+  .col-order-mobile-4 { order: 4; }
+  .col-order-mobile-5 { order: 5; }
+  .col-order-mobile-6 { order: 6; }
+}
+
+/* Common responsive breakpoints */
+@media (max-width: 768px) {
+  .flex-grid {
+    flex-direction: column;
+  }
+  
+  .flex-grid-thirds {
+    flex-direction: column;
+  }
+  
+  .flex-grid-thirds .col {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .flex-grid-thirds .col:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* Utility classes for common layouts */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}

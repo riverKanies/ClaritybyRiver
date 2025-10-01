@@ -201,6 +201,43 @@ main {
     background-color: #333333;
 }
 
+/* Story section with image layout */
+.story-section {
+    position: relative;
+}
+
+/* Desktop: image to the right of text - now handled by flex.css */
+
+/* Mobile: image between title and content */
+@media (max-width: 768px) {
+    .story-section {
+        display: block;
+    }
+    
+    .story-content {
+        display: block;
+    }
+}
+
+.story-img,
+.bio-img,
+.credentials-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Desktop: image should maintain its natural size within the 300px container */
+@media (min-width: 769px) {
+    .story-img,
+    .bio-img,
+    .credentials-img {
+        width: auto;
+        max-width: 100%;
+    }
+}
+
 .story-section h3,
 .bio-section h3,
 .credentials-section h3,
@@ -299,6 +336,19 @@ footer p {
         margin-bottom: 2rem;
     }
     
+    /* Mobile story section layout - image between title and content */
+    .story-image {
+        width: 100%;
+        margin: 1rem 0;
+        text-align: center;
+    }
+    
+    .story-img {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+    }
+    
     .about-hero h2 {
         font-size: 2.5rem;
     }
@@ -339,24 +389,24 @@ footer p {
     }
     
     /* Mobile story section styling with max height and fade effect */
-    .story-section,
-    .bio-section,
-    .credentials-section {
+    .story-content,
+    .bio-content,
+    .credentials-content {
         position: relative;
-        max-height: 295px;
+        max-height: 200px;
         overflow: hidden;
         transition: max-height 0.3s ease;
     }
     
-    .story-section.expanded,
-    .bio-section.expanded,
-    .credentials-section.expanded {
+    .story-content.expanded,
+    .bio-content.expanded,
+    .credentials-content.expanded {
         max-height: none;
     }
     
-    .story-section::after,
-    .bio-section::after,
-    .credentials-section::after {
+    .story-content::after,
+    .bio-content::after,
+    .credentials-content::after {
         content: '';
         position: absolute;
         bottom: 0;
@@ -368,9 +418,9 @@ footer p {
         transition: opacity 0.3s ease;
     }
     
-    .story-section.expanded::after,
-    .bio-section.expanded::after,
-    .credentials-section.expanded::after {
+    .story-content.expanded::after,
+    .bio-content.expanded::after,
+    .credentials-content.expanded::after {
         opacity: 0;
     }
 }
@@ -412,6 +462,21 @@ footer p {
     .story-section:not(.expanded) .read-more-btn,
     .bio-section:not(.expanded) .read-more-btn,
     .credentials-section:not(.expanded) .read-more-btn {
+        display: block;
+    }
+    
+    /* For story section, show button when story-content is not expanded */
+    .story-section .story-content:not(.expanded) .read-more-btn {
+        display: block;
+    }
+    
+    /* For bio section, show button when bio-content is not expanded */
+    .bio-section .bio-content:not(.expanded) .read-more-btn {
+        display: block;
+    }
+    
+    /* For credentials section, show button when credentials-content is not expanded */
+    .credentials-section .credentials-content:not(.expanded) .read-more-btn {
         display: block;
     }
 }
