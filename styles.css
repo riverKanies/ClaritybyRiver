@@ -79,7 +79,7 @@ header {
 
 /* Introduction Section */
 .intro-section {
-    padding: 3rem 0;
+    padding: 3rem 0 1rem;
     background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
     text-align: center;
 }
@@ -156,7 +156,7 @@ main {
 /* Hero section */
 .hero {
     background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-    padding: 4rem 0;
+    padding: 2rem 0;
     text-align: center;
 }
 
@@ -169,7 +169,7 @@ main {
 .hero h3 {
     font-size: 2rem;
     margin-bottom: 2rem;
-    color: #cccccc;
+    color: #ffffff;
 }
 
 .intro {
@@ -232,13 +232,14 @@ main {
 .pain-point-content {
     display: none;
     padding: 1rem 2rem 1.5rem 2rem;
-    background-color: #353535;
+    background-color: #a48c02;
 }
 
 .pain-point-content p {
-    color: #cccccc;
-    font-size: 1rem;
+    color: #ffffff;
+    font-size: 1.6rem;
     line-height: 1.7;
+    font-weight: 500;
 }
 
 /* About page styles */
@@ -253,10 +254,7 @@ main {
     color: #ffffff;
 }
 
-.intro-section {
-    padding: 4rem 0;
-    background-color: #1a1a1a;
-}
+
 
 .intro-text {
     display: flex;
