@@ -26,6 +26,15 @@ header {
     min-height: 60px;
 }
 
+a {
+    color: #40b3ec;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #b035e9;
+}
+
 .nav-container {
     width: 100%;
     margin: 0 auto;
@@ -366,6 +375,25 @@ footer {
 footer p {
     color: #cccccc;
     font-size: 0.9rem;
+}
+
+.social-links {
+    margin-top: 1rem;
+}
+
+.instagram-link {
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.instagram-link:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.instagram-link svg {
+    width: 24px;
+    height: 24px;
 }
 
 /* Responsive design */
