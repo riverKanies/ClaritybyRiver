@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Clarity by River</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="images/logo.jpeg" alt="Clarity by River" class="logo-img">
+                    <h1 class="logo-text">Clarity by River</h1>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Contact Hero Section -->
+        <section class="contact-hero">
+            <div class="container">
+                <h2>Get In Touch</h2>
+                <p class="contact-intro">Ready to start your journey to clarity? Let's connect and discuss how I can help you achieve your goals.</p>
+            </div>
+        </section>
+
+        <!-- Email Section -->
+        <section class="email-section">
+            <div class="container">
+                <div class="email-container">
+                    <h3>Email me to set up a <span class="gold-text">free</span> consultation</h3>
+                    <div class="email-wrapper">
+                        <a href="mailto:info@claritybyriver.com" class="email-link">info@claritybyriver.com</a>
+                        <button class="copy-btn" onclick="copyEmail()" title="Copy email to clipboard">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="copy-feedback" id="copyFeedback"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- QR Code Section -->
+        <section class="qr-section">
+            <div class="container">
+                <div class="qr-container">
+                    <h3>Quick Share</h3>
+                    <div class="qr-wrapper">
+                        <div id="qrcode"></div>
+                        <p class="qr-description">Scan to share this website</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.instagram.com/claritybyriver/" target="_blank" class="instagram-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.919-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="white"/>
+                    </svg>
+                </a>
+            </div>
+            <p>&copy; 2025 Clarity by River. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- QR Code Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Copy email functionality
+        function copyEmail() {
+            const email = 'info@claritybyriver.com';
+            const feedback = document.getElementById('copyFeedback');
+            
+            navigator.clipboard.writeText(email).then(function() {
+                feedback.textContent = 'Email copied to clipboard!';
+                feedback.style.color = '#4CAF50';
+                setTimeout(function() {
+                    feedback.textContent = '';
+                }, 3000);
+            }).catch(function(err) {
+                feedback.textContent = 'Failed to copy email';
+                feedback.style.color = '#f44336';
+                setTimeout(function() {
+                    feedback.textContent = '';
+                }, 3000);
+            });
+        }
+
+        // Generate QR code when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            const websiteUrl = "claritybyriver.com"
+            
+            try {
+                new QRCode(document.getElementById("qrcode"), {
+                    text: websiteUrl,
+                    width: 200,
+                    height: 200,
+                    colorDark: "#000000",
+                    colorLight: "#ffffff"
+                });
+            } catch (error) {
+                console.error('QR Code generation error:', error);
+                // Fallback: show a simple text representation
+                document.getElementById("qrcode").innerHTML = '<div style="background: white; padding: 20px; border-radius: 8px; text-align: center;"><p style="color: black; margin: 0;">QR Code</p><p style="color: #666; font-size: 12px; margin: 5px 0 0 0;">' + websiteUrl + '</p></div>';
+            }
+        });
+    </script>
+</body>
+</html>
