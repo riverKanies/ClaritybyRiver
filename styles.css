@@ -212,7 +212,7 @@ main {
 
 /* Pain points section */
 .pain-points {
-    padding: 4rem 0;
+    padding: 2rem 0;
     background-color: #2a2a2a;
 }
 
@@ -399,6 +399,7 @@ footer {
 footer p {
     color: #cccccc;
     font-size: 0.9rem;
+    margin-top: 2rem;
 }
 
 .social-links {
