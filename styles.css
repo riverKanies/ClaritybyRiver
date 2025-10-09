@@ -50,6 +50,8 @@ a:hover {
     display: flex;
     align-items: center;
     gap: 0.75rem;
+    text-decoration: none;
+    color: inherit;
 }
 
 .logo-img {
@@ -64,6 +66,14 @@ a:hover {
     font-weight: bold;
     color: #ffffff;
     margin: 0;
+}
+
+.logo-text-mobile {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0;
+    display: none;
 }
 
 .nav-menu {
@@ -548,6 +558,10 @@ footer p {
     
     .logo-text {
         display: none;
+    }
+    
+    .logo-text-mobile {
+        display: block;
     }
     
     .hero h2 {
