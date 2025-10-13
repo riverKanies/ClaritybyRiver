@@ -223,6 +223,13 @@ main {
     margin-bottom: 1.5rem;
     background-color: #333333;
     transition: all 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.pain-point:last-child {
+    margin-bottom: 0;
 }
 
 .pain-point:hover {
@@ -264,9 +271,15 @@ main {
 }
 
 .pain-point-content {
-    display: none;
-    padding: 1rem 2rem 1.5rem 2rem;
-    background-color: #a48c02;
+    max-height: 0;
+    overflow: hidden;
+    background-color: #008bcb;
+    transition: max-height 0.4s ease;
+    position: relative;
+}
+
+.pain-point-content.expanded {
+    max-height: 500px; /* Increased to accommodate mobile content */
 }
 
 .pain-point-content p {
@@ -274,6 +287,8 @@ main {
     font-size: 1.6rem;
     line-height: 1.7;
     font-weight: 500;
+    padding: 1rem 2rem 1.5rem 2rem;
+    margin: 0;
 }
 
 /* About page styles */
@@ -521,7 +536,17 @@ footer p {
     }
     
     .pain-point-content {
+        /* Ensure mobile animation works */
+        transition: max-height 0.4s ease;
+    }
+    
+    .pain-point-content.expanded {
+        max-height: 400px; /* Smaller max-height for mobile */
+    }
+    
+    .pain-point-content p {
         padding: 1rem;
+        font-size: 1.4rem;
     }
     
     .story-section,
@@ -596,6 +621,20 @@ footer p {
     
     .pain-point-toggle {
         font-size: 0.95rem;
+    }
+    
+    .pain-point-content {
+        /* Ensure animation works on small mobile screens */
+        transition: max-height 0.4s ease;
+    }
+    
+    .pain-point-content.expanded {
+        max-height: 350px; /* Even smaller for very small screens */
+    }
+    
+    .pain-point-content p {
+        padding: 0.8rem 1rem;
+        font-size: 1.2rem;
     }
     
     .story-section h3,
@@ -984,9 +1023,9 @@ footer p {
 
 .email-link {
     font-size: 1.4rem;
-    color: #40b3ec;
+    color: #ffd700;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: bold;
     transition: color 0.3s ease;
 }
 
@@ -1021,6 +1060,7 @@ footer p {
 .qr-section {
     padding: 4rem 0;
     background-color: #1a1a1a;
+    border-top: 2px solid #ffd700;
 }
 
 .qr-container {

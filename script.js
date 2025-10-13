@@ -4,16 +4,19 @@ document.addEventListener('DOMContentLoaded', function() {
     
     painPointToggles.forEach(toggle => {
         toggle.addEventListener('click', function() {
+            const painPoint = this.closest('.pain-point');
             const content = this.nextElementSibling;
             const arrow = this.querySelector('.arrow');
             
-            // Toggle the content visibility
-            if (content.style.display === 'block') {
-                content.style.display = 'none';
+            // Toggle the content visibility with smooth animation
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                painPoint.classList.remove('expanded');
                 arrow.textContent = '▶';
                 this.classList.remove('active');
             } else {
-                content.style.display = 'block';
+                content.classList.add('expanded');
+                painPoint.classList.add('expanded');
                 arrow.textContent = '▼';
                 this.classList.add('active');
             }
