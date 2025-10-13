@@ -70,3 +70,27 @@ function toggleReadMore(button) {
         }
     }
 }
+
+// Testimonials scroll animation
+document.addEventListener('DOMContentLoaded', function() {
+    const testimonialCards = document.querySelectorAll('.testimonial-card');
+    
+    if (testimonialCards.length > 0) {
+        // Create intersection observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, {
+            threshold: 0.0, // Trigger as soon as any part of the element is visible
+            rootMargin: '0px 0px 0px 0px' // No margin, trigger immediately when top comes into view
+        });
+        
+        // Observe each testimonial card
+        testimonialCards.forEach(card => {
+            observer.observe(card);
+        });
+    }
+});
