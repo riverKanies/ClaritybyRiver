@@ -870,11 +870,12 @@ footer p {
 }
 
 .testimonial-author {
-    color: #ffd700;
+    color: #d9d9d9;
     font-weight: bold;
     font-size: 1rem;
     text-align: right;
     margin-top: 1rem;
+    opacity: 0.8;
 }
 
 /* Call to Action Section */
@@ -901,16 +902,15 @@ footer p {
 
 .cta-button {
     display: inline-block;
-    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    background: linear-gradient(135deg, #00aeff 0%, #43c4ff 100%);
     color: #1a1a1a;
     padding: 1rem 2rem;
-    border-radius: 8px;
+    border-radius: 10px;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.1rem;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
-    border: 2px solid #ffd700;
+    box-shadow: 0 4px 15px rgba(76, 219, 255, 0.5);
 }
 
 .cta-button:hover {
@@ -966,6 +966,10 @@ footer p {
 
 .gold-text {
     color: #ffd700;
+    font-weight: bold;
+}
+.blue-text {
+    color: #43c4ff;
     font-weight: bold;
 }
 
