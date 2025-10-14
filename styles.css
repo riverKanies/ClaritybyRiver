@@ -420,6 +420,31 @@ footer p {
     margin-top: 2rem;
 }
 
+.footer-links {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.footer-link {
+    color: #999999;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #cccccc;
+    text-decoration: underline;
+}
+
+.footer-separator {
+    color: #666666;
+    font-size: 0.8rem;
+}
+
 .social-links {
     margin-top: 1rem;
 }
