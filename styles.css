@@ -298,6 +298,7 @@ main {
     text-align: center;
 }
 
+
 .about-hero h2 {
     font-size: 3rem;
     color: #ffffff;
@@ -394,6 +395,27 @@ main {
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 1.5rem;
+}
+
+/* Quote hooks styling - placed after paragraph styles to override them */
+.quote-hook {
+    margin: 2rem 0;
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #444444;
+    border-radius: 0 8px 8px 16px;
+    border-left: 4px solid #ffd700;
+    position: relative;
+}
+
+.quote-text {
+    font-size: 1.6rem !important;
+    font-weight: bold;
+    color: #ffffff;
+    font-style: italic;
+    line-height: 1.4;
+    margin: 0 !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .videos-section ul {
@@ -582,6 +604,15 @@ footer p {
         margin-bottom: 2rem;
     }
     
+    .quote-hook {
+        margin: 1.5rem 0;
+        padding: 1rem;
+    }
+    
+    .quote-text {
+        font-size: 1.3rem !important;
+    }
+    
     /* Mobile story section layout - image between title and content */
     .story-image {
         width: 100%;
@@ -677,6 +708,15 @@ footer p {
     .bio-section p,
     .credentials-section p {
         font-size: 1rem;
+    }
+    
+    .quote-hook {
+        margin: 1rem 0;
+        padding: 0.8rem;
+    }
+    
+    .quote-text {
+        font-size: 1.0rem !important;
     }
     
     /* Testimonials mobile styles */
