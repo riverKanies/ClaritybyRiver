@@ -40,7 +40,7 @@
         <section class="email-section">
             <div class="container">
                 <div class="email-container">
-                    <h3>Email me to set up a <span class="blue-text">FREE</span> consultation</h3>
+                    <h3>Email or text to set up a <span class="blue-text">FREE</span> consultation</h3>
                     <div class="email-wrapper">
                         <a href="mailto:info@claritybyriver.com" class="email-link">info@claritybyriver.com</a>
                         <button class="copy-btn" onclick="copyEmail()" title="Copy email to clipboard">
@@ -49,6 +49,19 @@
                             </svg>
                         </button>
                     </div>
+                    <div class="email-wrapper">
+                        <span class="email-link" onclick="copyPhone()">(615) 714-7858</span>
+                        <button class="copy-btn" onclick="copyPhone()" title="Copy phone number to clipboard">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16 1H4C2.9 1 2 1.9 2 3V17H4V3H16V1ZM19 5H8C6.9 5 6 5.9 6 7V21C6 22.1 6.9 23 8 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H8V7H19V21Z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <br/>
+                    <div class="email-wrapper">
+                        <a href="./contact.vcf" class="copy-btn"><span class="email-link">Save Full Contact</span></a>
+                    </div>
+
                     <p class="copy-feedback" id="copyFeedback"></p>
                 </div>
             </div>
@@ -108,6 +121,25 @@
                 }, 3000);
             }).catch(function(err) {
                 feedback.textContent = 'Failed to copy email';
+                feedback.style.color = '#f44336';
+                setTimeout(function() {
+                    feedback.textContent = '';
+                }, 3000);
+            });
+        }
+
+        function copyPhone() {
+            const phone = '+1-615-714-7858';
+            const feedback = document.getElementById('copyFeedback');
+            
+            navigator.clipboard.writeText(phone).then(function() {
+                feedback.textContent = 'Phone number copied to clipboard!';
+                feedback.style.color = '#43c4ff';
+                setTimeout(function() {
+                    feedback.textContent = '';
+                }, 3000);
+            }).catch(function(err) {
+                feedback.textContent = 'Failed to copy phone number';
                 feedback.style.color = '#f44336';
                 setTimeout(function() {
                     feedback.textContent = '';
