@@ -1199,7 +1199,6 @@ footer p {
     }
     
     .email-wrapper {
-        flex-direction: column;
         gap: 1rem;
     }
 }
