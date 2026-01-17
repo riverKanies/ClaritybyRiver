@@ -482,14 +482,14 @@ footer p {
 }
 
 .instagram-link svg {
-    width: 24px;
-    height: 24px;
+    width: 48px;
+    height: 48px;
 }
 
 .youtube-link {
     display: inline-block;
     transition: transform 0.3s ease, opacity 0.3s ease;
-    margin-left: 1rem;
+    margin-left: 40px;
 }
 
 .youtube-link:hover {
@@ -498,8 +498,24 @@ footer p {
 }
 
 .youtube-link svg {
-    width: 24px;
-    height: 24px;
+    width: 48px;
+    height: 48px;
+}
+
+.spotify-link {
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    margin-left: 40px;
+}
+
+.spotify-link:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.spotify-link svg {
+    width: 48px;
+    height: 48px;
 }
 
 /* Responsive design */
