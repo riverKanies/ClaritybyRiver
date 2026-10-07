@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>QR - Clarity by River</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-container">
+                <a href="../index.html" class="logo">
+                    <img src="../images/logo.jpeg" alt="Clarity by River" class="logo-img">
+                    <h1 class="logo-text">Clarity by River</h1>
+                    <h1 class="logo-text-mobile">Clarity</h1>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="qr-section">
+            <div class="container">
+                <div class="qr-container qr-tool-container">
+                    <h3>QR Generator</h3>
+                    <div class="qr-input-row">
+                        <textarea id="qrText" class="qr-input" rows="3" placeholder="Paste or type text, a URL, etc."></textarea>
+                        <button type="button" class="copy-btn" id="pasteBtn" title="Paste from clipboard">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 2h-4.18C14.4.84 13.3 0 12 0S9.6.84 9.18 2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 0c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm7 18H5V4h2v3h10V4h2v16z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="copy-feedback" id="qrFeedback"></p>
+                    <div class="qr-wrapper">
+                        <div id="qrcode"></div>
+                        <p class="qr-description" id="qrDescription">Enter text to generate a QR code</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 CLARITYBYRIVER LLC. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+        (function() {
+            const input = document.getElementById('qrText');
+            const qrEl = document.getElementById('qrcode');
+            const description = document.getElementById('qrDescription');
+            const feedback = document.getElementById('qrFeedback');
+            const pasteBtn = document.getElementById('pasteBtn');
+
+            function showFeedback(message, ok) {
+                feedback.textContent = message;
+                feedback.style.color = ok ? '#43c4ff' : '#f44336';
+                if (!message) return;
+                setTimeout(function() {
+                    if (feedback.textContent === message) {
+                        feedback.textContent = '';
+                    }
+                }, 3000);
+            }
+
+            function generateQR(text) {
+                qrEl.innerHTML = '';
+                const value = (text || '').trim();
+                if (!value) {
+                    description.textContent = 'Enter text to generate a QR code';
+                    return;
+                }
+
+                try {
+                    new QRCode(qrEl, {
+                        text: value,
+                        width: 200,
+                        height: 200,
+                        colorDark: '#000000',
+                        colorLight: '#ffffff'
+                    });
+                    description.textContent = value;
+                } catch (error) {
+                    console.error('QR Code generation error:', error);
+                    qrEl.innerHTML = '<div style="background: white; padding: 20px; border-radius: 8px; text-align: center;"><p style="color: black; margin: 0;">Could not generate QR</p></div>';
+                    description.textContent = value;
+                }
+            }
+
+            async function pasteFromClipboard() {
+                if (!navigator.clipboard || !navigator.clipboard.readText) {
+                    showFeedback('Clipboard access is not available', false);
+                    return;
+                }
+
+                try {
+                    const text = (await navigator.clipboard.readText()).trim();
+                    if (!text) {
+                        showFeedback('Clipboard is empty', false);
+                        return;
+                    }
+                    input.value = text;
+                    generateQR(text);
+                } catch (err) {
+                    showFeedback('Allow clipboard access, or paste with Ctrl/Cmd+V', false);
+                }
+            }
+
+            input.addEventListener('input', function() {
+                generateQR(input.value);
+            });
+
+            pasteBtn.addEventListener('click', pasteFromClipboard);
+
+            input.focus();
+        })();
+    </script>
+</body>
+</html>
