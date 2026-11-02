@@ -32,6 +32,7 @@
             <div class="container">
                 <div class="qr-container qr-tool-container">
                     <h3>QR Generator</h3>
+                    <input type="text" id="qrTitle" class="qr-input qr-title-field" placeholder="Title to show above the QR">
                     <div class="qr-input-row">
                         <textarea id="qrText" class="qr-input" rows="3" placeholder="Paste or type text, a URL, etc."></textarea>
                         <button type="button" class="copy-btn" id="pasteBtn" title="Paste from clipboard">
@@ -42,6 +43,7 @@
                     </div>
                     <p class="copy-feedback" id="qrFeedback"></p>
                     <div class="qr-wrapper">
+                        <h4 class="qr-display-title" id="qrDisplayTitle"></h4>
                         <div id="qrcode"></div>
                         <p class="qr-description" id="qrDescription">Enter text to generate a QR code</p>
                     </div>
@@ -60,7 +62,9 @@
     <script>
         (function() {
             const input = document.getElementById('qrText');
+            const titleInput = document.getElementById('qrTitle');
             const qrEl = document.getElementById('qrcode');
+            const displayTitle = document.getElementById('qrDisplayTitle');
             const description = document.getElementById('qrDescription');
             const feedback = document.getElementById('qrFeedback');
             const pasteBtn = document.getElementById('pasteBtn');
@@ -74,6 +78,10 @@
                         feedback.textContent = '';
                     }
                 }, 3000);
+            }
+
+            function updateTitle() {
+                displayTitle.textContent = (titleInput.value || '').trim();
             }
 
             function generateQR(text) {
@@ -123,9 +131,11 @@
                 generateQR(input.value);
             });
 
+            titleInput.addEventListener('input', updateTitle);
+
             pasteBtn.addEventListener('click', pasteFromClipboard);
 
-            input.focus();
+            titleInput.focus();
         })();
     </script>
 </body>

@@ -1199,6 +1199,26 @@ footer p {
     max-width: 520px;
 }
 
+.qr-title-field {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.75rem;
+    box-sizing: border-box;
+}
+
+.qr-display-title {
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0;
+    word-break: break-word;
+    max-width: 100%;
+}
+
+.qr-display-title:empty {
+    display: none;
+}
+
 .qr-input-row {
     display: flex;
     align-items: flex-start;
